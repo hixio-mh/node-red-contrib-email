@@ -60,6 +60,10 @@
         <label for="node-input-password"><i class="fa fa-lock"></i> <span data-i18n="email.label.password"></span></label>
         <input type="password" id="node-input-password">
     </div>
+    <div class="form-row">
+        <label for="node-input-secure"><i class="fa fa-lock"></i> <span data-i18n="email.label.secure"></span></label>
+        <input type="checkbox" id="node-input-secure">
+    </div>    
     <br/>
     <div class="form-row">
         <label for="node-input-dname"><i class="fa fa-tag"></i> <span data-i18n="node-red:common.label.name"></span></label>
@@ -84,7 +88,7 @@
 (function() {
     RED.nodes.registerType('e-mail',{
         category: 'social-output',
-        color:"#c7e9c0",
+        color:"#0099cc",
         defaults: {
             server: {value:"smtp.gmail.com",required:true},
             port: {value:"465",required:true},
@@ -92,9 +96,10 @@
             dname: {value:""}
         },
         credentials: {
-            userid: {type:"text"},
-            password: {type: "password"},
-            global: { type:"boolean"}
+            userid: {type:"text" },
+            password: {type: "password" },
+            global: { type:"boolean" },
+            secure: { type:"boolean" }
         },
         inputs:1,
         outputs:0,
@@ -176,9 +181,10 @@
             repeat: {value:"300",required:true}
         },
         credentials: {
-            userid: {type:"text"},
-            password: {type: "password"},
-            global: { type:"boolean"}
+            userid: {type:"text" },
+            password: {type: "password" },
+            global: { type:"boolean" },
+            secure: { type: "boolean" }
         },
         inputs:0,
         outputs:1,

@@ -61,7 +61,7 @@ module.exports = function(RED) {
         var smtpTransport = nodemailer.createTransport({
             host: node.outserver,
             port: node.outport,
-            secure: true,
+            secure: node.secure,
             auth: {
                 user: node.userid,
                 pass: node.password
@@ -75,7 +75,7 @@ module.exports = function(RED) {
                     if (msg.to && node.name && (msg.to !== node.name)) {
                         node.warn(RED._("node-red:common.errors.nooverride"));
                     }
-                    var sendopts = { from: node.userid };   // sender address
+                    var sendopts = { from: msg.from || node.userid };   // sender address
                     sendopts.to = node.name || msg.to; // comma separated list of addressees
                     sendopts.subject = msg.topic || msg.title || "Message from Node-RED"; // subject line
                     if (Buffer.isBuffer(msg.payload)) { // if it's a buffer in the payload then auto create an attachment instead

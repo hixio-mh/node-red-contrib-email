@@ -3,8 +3,7 @@ node-red-node-email
 
 <a href="http://nodered.org" target="_new">Node-RED</a> nodes to send and receive simple emails.
 
-**Note** : This is the same node as was in the core of Node-RED.
-As of v0.10.8 it will be installed from here instead.
+This is a fork from node-red-node-contrib. It gives some more options
 
 Pre-requisite
 -------------
@@ -16,7 +15,7 @@ Install
 
 Run the following command in your Node-RED user directory - typically `~/.node-red`
 
-        npm i node-red-node-email
+        npm i node-red-contrib-email
 
 Usage
 -----
@@ -36,6 +35,8 @@ Additionally `msg.header` contains the complete header object including
 
 **Note:** this node *only* gets the most recent single email from the inbox,
 so set the repeat (polling) time appropriately.
+
+The sender address is tooke from `msg.from`
 
 Uses the *imap* npm module.
 
