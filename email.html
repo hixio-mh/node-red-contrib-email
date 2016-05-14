@@ -14,7 +14,7 @@
   limitations under the License.
 -->
 
-<script type="text/x-red" data-template-name="e-mail">
+<script type="text/x-red" data-template-name="e-mail2">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-envelope"></i> <span data-i18n="email.label.to"></span></label>
         <input type="text" id="node-input-name" placeholder="email@address.com">
@@ -61,9 +61,11 @@
         <input type="password" id="node-input-password">
     </div>
     <div class="form-row">
-        <label for="node-input-secure"><i class="fa fa-lock"></i> <span data-i18n="email.label.secure"></span></label>
-        <input type="checkbox" id="node-input-secure">
+      <label>&nbsp;</label>
+      <input type="checkbox" id="node-input-secure" style="display: inline-block; width: auto; vertical-align: top;">
+      <label for="node-input-secure" style="width: 70%;"><span data-i18n="email.label.secure"></span></label>        
     </div>    
+
     <br/>
     <div class="form-row">
         <label for="node-input-dname"><i class="fa fa-tag"></i> <span data-i18n="node-red:common.label.name"></span></label>
@@ -86,7 +88,7 @@
 
 <script type="text/javascript">
 (function() {
-    RED.nodes.registerType('e-mail',{
+    RED.nodes.registerType('e-mail2',{
         category: 'social-output',
         color:"#0099cc",
         defaults: {
@@ -123,7 +125,7 @@
 </script>
 
 
-<script type="text/x-red" data-template-name="e-mail in">
+<script type="text/x-red" data-template-name="e-mail2 in">
     <div class="form-row node-input-repeat">
         <label for="node-input-repeat"><i class="fa fa-repeat"></i> <span data-i18n="email.label.repeat"></span></label>
         <input type="text" id="node-input-repeat" style="width: 80px"> <span data-i18n="email.label.seconds">seconds</span>
@@ -170,9 +172,9 @@
 
 <script type="text/javascript">
 (function() {
-    RED.nodes.registerType('e-mail in',{
+    RED.nodes.registerType('e-mail2 in',{
         category: 'social-input',
-        color:"#c7e9c0",
+        color:"#0099cc",
         defaults: {
             name: {value:""},
             server: {value:"imap.gmail.com",required:true},

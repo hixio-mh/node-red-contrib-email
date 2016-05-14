@@ -115,7 +115,7 @@ module.exports = function(RED) {
             else { node.warn(RED._("email.errors.nopayload")); }
         });
     }
-    RED.nodes.registerType("e-mail",EmailNode,{
+    RED.nodes.registerType("e-mail2",EmailNode,{
         credentials: {
             userid: {type:"text"},
             password: {type: "password"},
@@ -268,7 +268,7 @@ module.exports = function(RED) {
 
         node.emit("input",{});
     }
-    RED.nodes.registerType("e-mail in",EmailInNode,{
+    RED.nodes.registerType("e-mail2 in",EmailInNode,{
         credentials: {
             userid: {type:"text"},
             password: {type: "password"},

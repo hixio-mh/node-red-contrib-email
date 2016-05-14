@@ -33,7 +33,7 @@
   "name": "node-red-contrib-email",
   "node-red": {
     "nodes": {
-      "email": "61-email.js"
+      "email2": "email.js"
     }
   },
   "optionalDependencies": {},
