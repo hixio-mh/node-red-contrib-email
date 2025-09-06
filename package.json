@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "imap": "0.8.16",
-    "nodemailer": "6.4.16"
+    "nodemailer": "6.9.9"
   },
   "description": "Node-RED nodes to send and receive simple emails, fork from node-red-node-email to give more options",
   "devDependencies": {},
